@@ -264,7 +264,7 @@ trait_robot_mass_produced = {
 	allowed_archetypes = { ROBOT MACHINE }
 
 	modifier = {
-		pop_assembly_speed = 0.10
+		pop_assembly_speed = 0.15
 	}
 }
 
