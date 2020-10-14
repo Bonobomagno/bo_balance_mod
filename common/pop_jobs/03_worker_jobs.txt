@@ -2,24 +2,22 @@
 # Basic Jobs
 # the file need all the jobs redefined here
 ###################
-
 clerk = {
 	category = worker
 	condition_string = WORKER_JOB_TRIGGER
 	building_icon = building_residence
 	clothes_texture_index = 2
-
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
 	}
-
 	possible = {
 		complex_worker_job_check_trigger = yes
-		owner = { is_fallen_empire = no }
+		owner = {
+			is_fallen_empire = no
+		}
 	}
-
 	planet_modifier = {
 		planet_amenities_add = 2
 		trade_value_add = 2.5
@@ -57,7 +55,9 @@ clerk = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_technology = tech_interstellar_economics }
+			owner = {
+				has_technology = tech_interstellar_economics
+			}
 		}
 		modifier = {
 			trade_value_add = 0.5
@@ -66,13 +66,14 @@ clerk = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_technology = tech_galactic_markets }
+			owner = {
+				has_technology = tech_galactic_markets
+			}
 		}
 		modifier = {
 			trade_value_add = 0.5
 		}
 	}
-
 	weight = {
 		weight = @clerk_job_weight
 		modifier = {
@@ -122,13 +123,11 @@ technician = {
 	condition_string = WORKER_JOB_TRIGGER
 	building_icon = building_power_plant
 	clothes_texture_index = 2
-
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
 	}
-
 	possible = {
 		complex_worker_job_check_trigger = yes
 		owner = {
@@ -136,7 +135,6 @@ technician = {
 			is_fallen_empire_spiritualist = no
 		}
 	}
-
 	resources = {
 		category = planet_technician
 		produces = {
@@ -242,7 +240,6 @@ technician = {
 			factor = 1.5
 			has_trait = trait_void_dweller_1
 		}
-
 		#modifier = {
 		#	factor = 500
 		#	planet = {
@@ -251,11 +248,9 @@ technician = {
 		#		}
 		#	}
 		#}
-
 		# low income modifier
 		modifier = {
 			factor = 1.2
-
 			OR = {
 				is_unemployed = yes
 				has_job = "technician"
@@ -279,22 +274,21 @@ miner = {
 	condition_string = WORKER_JOB_TRIGGER
 	building_icon = building_mine_generic
 	clothes_texture_index = 2
-
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
 	}
-
 	possible = {
-		hidden_trigger = { exists = owner }
+		hidden_trigger = {
+			exists = owner
+		}
 		worker_job_check_trigger = yes
 		owner = {
 			is_gestalt = no
 			is_fallen_empire_spiritualist = no
 		}
 	}
-
 	resources = {
 		category = planet_miners
 		produces = {
@@ -310,7 +304,6 @@ miner = {
 			energy = 0.5
 		}
 	}
-
 	weight = {
 		weight = @worker_job_weight
 		modifier = {
@@ -332,7 +325,9 @@ miner = {
 				is_shackled_robot = yes
 			}
 			can_take_servant_job = no
-			owner = { has_technology = tech_droid_workers }
+			owner = {
+				has_technology = tech_droid_workers
+			}
 		}
 		modifier = {
 			factor = 200
@@ -341,7 +336,11 @@ miner = {
 				is_shackled_robot = yes
 			}
 			can_take_servant_job = no
-			owner = { NOT = { has_technology = tech_droid_workers } }
+			owner = {
+				NOT = {
+					has_technology = tech_droid_workers
+				}
+			}
 		}
 		modifier = {
 			factor = 0.25
@@ -388,11 +387,9 @@ miner = {
 			factor = 1.5
 			has_trait = trait_void_dweller_1
 		}
-
 		# low income modifier
 		modifier = {
 			factor = 1.1
-
 			OR = {
 				is_unemployed = yes
 				has_job = "miner"
@@ -416,18 +413,17 @@ crystal_miner = {
 	condition_string = WORKER_JOB_TRIGGER
 	building_icon = building_crystal_mines
 	clothes_texture_index = 2
-
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
 	}
-
 	possible = {
 		worker_job_check_trigger = yes
-		owner = { is_gestalt = no }
+		owner = {
+			is_gestalt = no
+		}
 	}
-
 	resources = {
 		category = planet_miners
 		produces = {
@@ -443,7 +439,6 @@ crystal_miner = {
 			energy = 0.5
 		}
 	}
-
 	weight = {
 		weight = @specialist_job_weight
 		modifier = {
@@ -458,7 +453,9 @@ crystal_miner = {
 				is_shackled_robot = yes
 			}
 			can_take_servant_job = no
-			owner = { has_technology = tech_droid_workers }
+			owner = {
+				has_technology = tech_droid_workers
+			}
 		}
 		modifier = {
 			factor = 200
@@ -467,7 +464,11 @@ crystal_miner = {
 				is_shackled_robot = yes
 			}
 			can_take_servant_job = no
-			owner = { NOT = { has_technology = tech_droid_workers } }
+			owner = {
+				NOT = {
+					has_technology = tech_droid_workers
+				}
+			}
 		}
 		modifier = {
 			factor = 0.1
@@ -518,17 +519,14 @@ gas_extractor = {
 	condition_string = WORKER_JOB_TRIGGER
 	building_icon = building_gas_extractors
 	clothes_texture_index = 2
-
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
 	}
-
 	possible = {
 		worker_job_check_trigger = yes
 	}
-
 	resources = {
 		category = planet_miners
 		produces = {
@@ -544,7 +542,6 @@ gas_extractor = {
 			energy = 0.5
 		}
 	}
-
 	weight = {
 		weight = @specialist_job_weight
 		modifier = {
@@ -559,7 +556,9 @@ gas_extractor = {
 				is_shackled_robot = yes
 			}
 			can_take_servant_job = no
-			owner = { has_technology = tech_droid_workers }
+			owner = {
+				has_technology = tech_droid_workers
+			}
 		}
 		modifier = {
 			factor = 200
@@ -568,7 +567,11 @@ gas_extractor = {
 				is_shackled_robot = yes
 			}
 			can_take_servant_job = no
-			owner = { NOT = { has_technology = tech_droid_workers } }
+			owner = {
+				NOT = {
+					has_technology = tech_droid_workers
+				}
+			}
 		}
 		modifier = {
 			factor = 0.1
@@ -619,17 +622,14 @@ mote_harvester = {
 	condition_string = WORKER_JOB_TRIGGER
 	building_icon = building_mote_harvesting_traps
 	clothes_texture_index = 2
-
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
 	}
-
 	possible = {
 		worker_job_check_trigger = yes
 	}
-
 	resources = {
 		category = planet_miners
 		produces = {
@@ -645,7 +645,6 @@ mote_harvester = {
 			energy = 0.5
 		}
 	}
-
 	weight = {
 		weight = @specialist_job_weight
 		modifier = {
@@ -660,7 +659,9 @@ mote_harvester = {
 				is_shackled_robot = yes
 			}
 			can_take_servant_job = no
-			owner = { has_technology = tech_droid_workers }
+			owner = {
+				has_technology = tech_droid_workers
+			}
 		}
 		modifier = {
 			factor = 200
@@ -669,7 +670,11 @@ mote_harvester = {
 				is_shackled_robot = yes
 			}
 			can_take_servant_job = no
-			owner = { NOT = { has_technology = tech_droid_workers } }
+			owner = {
+				NOT = {
+					has_technology = tech_droid_workers
+				}
+			}
 		}
 		modifier = {
 			factor = 0.1
@@ -720,22 +725,21 @@ farmer = {
 	condition_string = WORKER_JOB_TRIGGER
 	building_icon = building_food_processing_facility
 	clothes_texture_index = 2
-
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
 	}
-
 	possible = {
-		hidden_trigger = { exists = owner }
+		hidden_trigger = {
+			exists = owner
+		}
 		worker_job_check_trigger = yes
 		owner = {
 			is_gestalt = no
 			is_fallen_empire_spiritualist = no
 		}
 	}
-
 	resources = {
 		category = planet_farmers
 		produces = {
@@ -760,11 +764,12 @@ farmer = {
 			energy = 0.5
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
 		}
 		modifier = {
 			planet_amenities_add = 2
@@ -773,7 +778,9 @@ farmer = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
 			OR = {
 				has_trait = trait_robot_domestic_protocols
 				has_trait = trait_charismatic
@@ -786,14 +793,15 @@ farmer = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_valid_civic = civic_agrarian_idyll }
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
 			has_trait = trait_repugnant
 		}
 		modifier = {
 			planet_amenities_add = -0.4
 		}
 	}
-
 	weight = {
 		weight = @worker_job_weight
 		modifier = {
@@ -805,7 +813,9 @@ farmer = {
 		}
 		modifier = {
 			factor = 1.1
-			owner = { has_valid_civic = civic_agrarian_idyll }
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
 		}
 		modifier = {
 			factor = 10
@@ -819,7 +829,9 @@ farmer = {
 				is_shackled_robot = yes
 			}
 			can_take_servant_job = no
-			owner = { has_technology = tech_droid_workers }
+			owner = {
+				has_technology = tech_droid_workers
+			}
 		}
 		modifier = {
 			factor = 200
@@ -828,7 +840,11 @@ farmer = {
 				is_shackled_robot = yes
 			}
 			can_take_servant_job = no
-			owner = { NOT = { has_technology = tech_droid_workers } }
+			owner = {
+				NOT = {
+					has_technology = tech_droid_workers
+				}
+			}
 		}
 		modifier = {
 			factor = 0.25
@@ -871,7 +887,9 @@ farmer = {
 		}
 		modifier = {
 			factor = 1.5
-			owner = { has_valid_civic = civic_agrarian_idyll }
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
 			OR = {
 				has_trait = trait_robot_domestic_protocols
 				has_trait = trait_charismatic
@@ -879,18 +897,18 @@ farmer = {
 		}
 		modifier = {
 			factor = 0.5
-			owner = { has_valid_civic = civic_agrarian_idyll }
+			owner = {
+				has_valid_civic = civic_agrarian_idyll
+			}
 			has_trait = trait_repugnant
 		}
 		modifier = {
 			factor = 1.5
 			has_trait = trait_void_dweller_1
 		}
-
 		# low income modifier
 		modifier = {
 			factor = 1.2
-
 			OR = {
 				is_unemployed = yes
 				has_job = farmer
@@ -906,11 +924,9 @@ farmer = {
 				}
 			}
 		}
-
 		modifier = {
 			factor = 0.5
 			has_trait = trait_lithoid
-
 			owner = {
 				is_lithoid_empire = yes
 				has_monthly_income = {
@@ -927,39 +943,38 @@ soldier = {
 	condition_string = WORKER_JOB_TRIGGER
 	building_icon = building_stronghold
 	clothes_texture_index = 4
-
 	country_modifier = {
 		country_naval_cap_add = 4
 	}
-
 	triggered_country_modifier = {
 		potential = {
 			exists = planet
 			planet = {
 				exists = owner
-				owner = { has_technology = "tech_ground_defense_planning" }
+				owner = {
+					has_technology = "tech_ground_defense_planning"
+				}
 			}
 		}
 		modifier = {
 			country_naval_cap_add = 2
 		}
 	}
-
 	pop_modifier = {
 		pop_defense_armies_add = 3
 	}
-
 	resources = {
 		category = planet_soldiers
 		produces = {
 			trigger = {
 				exists = owner
-				owner = { has_valid_civic = civic_citizen_service }
+				owner = {
+					has_valid_civic = civic_citizen_service
+				}
 			}
 			unity = 2
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = planet
@@ -971,33 +986,35 @@ soldier = {
 			planet_stability_add = 5
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
-			owner = { has_civic = civic_private_military_companies }
+			owner = {
+				has_civic = civic_private_military_companies
+			}
 		}
 		modifier = {
 			trade_value_add = 2
 		}
 	}
-
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
 	}
-
 	possible = {
 		worker_job_check_trigger = yes
-		owner = { is_gestalt = no }
+		owner = {
+			is_gestalt = no
+		}
 	}
-
 	weight = {
 		weight = @soldier_job_weight
 		modifier = {
 			factor = 10
 			exists = planet
-			planet = { has_modifier = martial_law }
+			planet = {
+				has_modifier = martial_law
+			}
 		}
 		modifier = {
 			factor = 2
@@ -1018,12 +1035,18 @@ soldier = {
 		modifier = {
 			factor = 0.1
 			is_enslaved = yes
-			NOT = { has_slavery_type = { type = slavery_military } }
+			NOT = {
+				has_slavery_type = {
+					type = slavery_military
+				}
+			}
 		}
 		modifier = {
 			factor = 10
 			is_enslaved = yes
-			has_slavery_type = { type = slavery_military }
+			has_slavery_type = {
+				type = slavery_military
+			}
 		}
 		modifier = {
 			factor = 0.1
@@ -1092,29 +1115,24 @@ preacher = {
 	building_icon = building_temple_of_prosperity
 	clothes_texture_index = 3
 	icon = priest
-
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
 	}
-
 	possible = {
 		complex_worker_job_check_trigger = yes
 	}
-
 	resources = {
 		category = planet_priests
 		produces = {
 			unity = 1
 		}
 	}
-
 	planet_modifier = {
 		planet_amenities_add = 3
 		trade_value_add = 3
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			OR = {
@@ -1145,17 +1163,20 @@ preacher = {
 			trade_value_add = 0.6
 		}
 	}
-
 	weight = {
 		weight = @specialist_job_weight
 		modifier = {
 			factor = 0.2
 			has_citizenship_rights = no
-			NOT = { has_trait = trait_mechanical }
+			NOT = {
+				has_trait = trait_mechanical
+			}
 		}
 		modifier = {
 			factor = 2
-			owner = { has_civic = civic_exalted_priesthood }
+			owner = {
+				has_civic = civic_exalted_priesthood
+			}
 		}
 		modifier = {
 			factor = 1.5
@@ -1197,7 +1218,9 @@ preacher = {
 		modifier = {
 			factor = 0.1
 			has_ethic = ethic_materialist
-			NOT = { has_job = preacher }
+			NOT = {
+				has_job = preacher
+			}
 		}
 		modifier = {
 			factor = 1.05
