@@ -144,7 +144,7 @@ coordinator = {
 	}
 
 	country_modifier = {
-		country_admin_cap_add = 15
+		country_admin_cap_add = 10
 	}
 
 	triggered_planet_modifier = {
